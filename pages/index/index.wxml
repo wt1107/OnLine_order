@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="container">
+
   <!--首页导航  -->
   <view class='myswiper'>
-    <swiper indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
           <image src="{{item}}" class="slide-image" />
@@ -11,12 +11,25 @@
       </block>
     </swiper>
   </view>
+
   <!-- 分类导航信息 -->
-  <view class='components'>
+  <view class="components">
     <block wx:for="{{components}}" wx:key="index">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" />
-        </swiper-item>
-      </block>
+      <view class="functions" bindtap="changeTo" data-where="{{item.where}}">
+        <view class="functionImage">
+          <image src="{{item.image}}" />
+        </view>
+        <text>{{item.function}}</text>
+      </view>
+    </block>
   </view>
+
+  <!-- scroll-view嵌套swiper实现上下栏轮播  -->
+    <scroll-view scroll-y-="true" >
+    <view class='headlines'></view>
+    <view ></view>
+    <view></view>
+    <view></view>
+  </scroll-view>
+
 </view>

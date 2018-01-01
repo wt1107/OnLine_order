@@ -10,12 +10,41 @@
 /*轮播图  */
 .myswiper{
   width: 100%;
-  height: 290rpx;
+  /* height: 290rpx; */
   background-size: cover;
 }
 /*分类导航  */
 .components{
   width: 100%;
   height:15vh; 
-
+  display: flex;
+  /* flex-direction:
+    row：横向从左到右排列（左对齐），默认的排列方式。
+    row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。
+    column：纵向排列。
+    column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。
+   */
+  flex-direction: row;
+  /*justify-content设置弹性盒子元素在主轴（横轴）方向上的对齐方式。  */
+  justify-content: space-around;
+  /*  */
+  align-items: center;
+  background-size: cover;
+}
+.components .functions{
+  width: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+}
+.components .functions image{
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+}
+.components .functions text{
+  text-align: center;
+  display: inline-block;
 }
